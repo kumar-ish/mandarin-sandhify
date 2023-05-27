@@ -1,0 +1,4 @@
+(executable
+ (public_name mandarin_sandhify)
+ (name main)
+ (libraries mandarin_sandhify uutf str core))

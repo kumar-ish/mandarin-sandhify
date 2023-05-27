@@ -1,0 +1,6 @@
+(library
+ (name mandarin_sandhify)
+ (libraries uutf str core)
+ (inline_tests)
+ (preprocess
+  (pps ppx_inline_test)))
