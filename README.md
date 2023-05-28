@@ -27,3 +27,11 @@ Then, run the program:
 ```
 dune exec mandarin_sandhify
 ```
+
+### Test
+
+You can run the basic tests for this using the following command:
+
+```
+dune runtest
+```
