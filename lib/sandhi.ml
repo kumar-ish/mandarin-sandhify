@@ -4,6 +4,7 @@ let yi = "yī"
 
 (* Transformed versions of those, when tone sandhi is at play *)
 let rising_yi = "yí"
+let falling_yi = "yì"
 let rising_bu = "bú"
 
 (* Different types of tones for characters in Chinese
@@ -64,6 +65,7 @@ let rec transform_words l =
   match l with
   (* Rules for yī *)
   | Yi :: Word (Falling, x) :: xs -> rising_yi :: x :: transform_words xs
+  | Yi :: Word (_, x) :: xs -> falling_yi :: x :: transform_words xs
   | Yi :: xs -> yi :: transform_words xs
   (* Rules for bù *)
   | Bu :: Word (Falling, x) :: xs -> rising_bu :: x :: transform_words xs
