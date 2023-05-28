@@ -28,5 +28,8 @@ setup.log
 # Local OPAM switch
 _opam/
 
+# We're not publishing this package
+mandarin_sandhify.opam
+
 .DS_STORE
 **/.DS_STORE
