@@ -1,6 +1,13 @@
 open Mandarin_sandhify.Sandhi
 
-let () =
-  match In_channel.(input_line stdin) with
-  | None -> print_endline "No input"
-  | Some str -> print_endline (sandhify str)
+
+let rec read_input () =
+  try
+    match In_channel.(input_line stdin) with
+    | None -> ()
+    | Some str -> print_endline (sandhify str);
+    read_input ()
+  with
+  | End_of_file -> ()
+
+let () = read_input ()

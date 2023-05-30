@@ -26,7 +26,7 @@ Then, build the program:
 dune build
 ```
 
-Then, run the program:
+Then, run the program -- this will input Pinyin text and output its sandhified form:
 
 ```
 dune exec mandarin_sandhify
