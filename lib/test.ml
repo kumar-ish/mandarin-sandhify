@@ -30,3 +30,7 @@ let%test "Double FallingRising => Rising + FallingRising" =
 (* "999" -- a popular Chinese cough medicine *)
 let%test "Triple FallingRising => Rising + Rising + FallingRising" =
   String.equal (Sandhi.sandhify "jiǔ jiǔ jiǔ") "jiú jiú jiǔ"
+
+(* Expression to deny compliments *)
+let %test "Quadruple FallingRising => Rising + FallingRising + Rising + FallingRising" =
+  String.equal (Sandhi.sandhify "nǎ lǐ nǎ lǐ") "ná lǐ ná lǐ"

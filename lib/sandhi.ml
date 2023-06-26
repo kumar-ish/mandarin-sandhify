@@ -71,6 +71,11 @@ let rec transform_words l =
   | Bu :: Word (Falling, x) :: xs -> rising_bu :: x :: transform_words xs
   | Bu :: xs -> bu :: transform_words xs
   (* Rules for falling rising tones (third tones) *)
+  | Word (FallingRising, x) 
+    :: Word (FallingRising, y)
+    :: Word (FallingRising, z)
+    :: Word (FallingRising, a)
+    :: xs ->  transform_to_rising x :: y :: transform_to_rising z :: a :: transform_words xs
   | Word (FallingRising, x)
     :: Word (FallingRising, y)
     :: Word (FallingRising, z)
@@ -83,6 +88,6 @@ let rec transform_words l =
   | _ -> []
 
 let sandhify str =
-  String.concat " " (transform_words (list_to_words (split_into_tokens str)))
+  split_into_tokens str |> list_to_words |> transform_words |> String.concat " "
 
 let print_list x = List.iter (Printf.printf "%s ") x
